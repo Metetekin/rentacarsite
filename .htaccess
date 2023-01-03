@@ -1,0 +1,38 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule .(css|js|jpg|jpeg|png|gif|ico|swf|bmp)$ - [nocase,redirect=404,last]
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule .(css|js|jpg|jpeg|png|gif|ico|swf|bmp)$ - [nocase,redirect=404,last]
+RewriteEngine on
+
+ErrorDocument 404 /404.php
+
+RewriteRule ^sayfa-([0-9a-zA-Z-_]+)-([0-9]+)$  sayfa.php?sef=$1&sayfa_id=$2 [L,QSA]
+RewriteRule ^blog-([0-9a-zA-Z-_]+)-([0-9]+)$  blog-detay.php?sef=$1&blog_id=$2 [L,QSA]
+RewriteRule ^konu-([0-9a-zA-Z-_]+)-([0-9]+)$  blog-kategori.php?sef=$1&kategori_id=$2 [L,QSA]
+RewriteRule ^rezervasyon-yap$ rezervasyon-yap.php [NC,L]
+RewriteRule ^rezervasyon-sonuc$ rezervasyon-sonuc.php [NC,L]
+RewriteRule ^rezervasyon$ rezervasyon.php [NC,L]
+RewriteRule ^sozlesme$ sozlesme.php [NC,L]
+RewriteRule ^rezervasyon-bilgi$ rezervasyon-bilgi.php [NC,L]
+RewriteRule ^rezervasyon-ode$ rezervasyon-ode.php [NC,L]
+RewriteRule ^rezervasyon-arac$ rezervasyon-arac.php [NC,L]
+RewriteRule ^fiyat-listesi$ fiyat-listesi.php [NC,L]
+RewriteRule ^sonuc$ sonuc.php [NC,L]
+RewriteRule ^projeler$ projeler.php [NC,L]
+RewriteRule ^blog$ blog.php [NC,L]
+RewriteRule ^sss$ sss.php [NC,L]
+RewriteRule ^banka-hesaplarimiz$ banka-hesaplarimiz.php [NC,L]
+RewriteRule ^iletisim$ iletisim.php [NC,L]
+
+#SSL
+#RewriteCond %{HTTPS} off
+#RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# “ea-php73” paketini varsayılan “PHP” programlama dili olarak ayarlayın.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php73 .php .php7 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit
